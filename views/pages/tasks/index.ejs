@@ -3,7 +3,7 @@
 <% tasks.forEach(task=> { %>
   <div class="card bg-light mb-3">
     <div class="card-body">
-      <label>
+      <label class="mb-2">
         Ukończone: <input type="checkbox" <%- task.done? 'checked' : '' %> disabled>
       </label>
 
@@ -18,7 +18,7 @@
       <a href="/zadania/<%= task._id %>/usun" class="btn btn-danger">Usuń</a>
 
       <form action="/zadania/<%= task._id %>/zmien-stan" method="POST" class="d-inline">
-        <button class="btn btn-success">Oznacz jako ukończone</button>
+        <button class="btn btn-success">Oznacz jako <%- task.done ? 'nie' : '' %>ukończone</button>
       </form>
     </div>
   </div>

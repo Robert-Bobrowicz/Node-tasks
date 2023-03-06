@@ -70,7 +70,10 @@ class TaskController {
 
   async toggleDone(req, res) {
     // pobierz task
+    const task = await Task.findById(req.params.id);
     // zmień wartość "done" taska (na odwrotną, czyli z 1 na 0, lub z 0 na 1) 
+    task.done = task.done ? 0 : 1;
+    await task.save();
     // oraz przekieruj na stronę główną
     res.redirect('/');
   }

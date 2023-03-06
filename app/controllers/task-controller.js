@@ -66,9 +66,13 @@ class TaskController {
   async delete(req, res) {
     try {
       // usuń task i przekieruj na stronę główną
+      await Task
+        .findByIdAndDelete(req.params.id)
+        .then(console.log('task deleted.'));
       res.redirect('/');
     } catch (e) {
       // opcjonalnie obsłuż błąd
+      console.log(e);
     }
   }
 

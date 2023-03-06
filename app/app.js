@@ -17,11 +17,7 @@ app.use(express.static('public'));
 
 //middleware
 app.use('/', require('./middleware/view-params'));
-app.use(function (req, res, next) {
-    res.locals.errors = null;
-    res.locals.form = {};
-    next();
-});
+app.use(require('./middleware/view-variables'));
 
 //body parser
 app.use(express.urlencoded({ extended: true }));

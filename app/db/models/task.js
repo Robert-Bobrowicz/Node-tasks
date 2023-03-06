@@ -12,6 +12,7 @@ const taskSchema = new Schema({
     type: String,
     required: [true, 'Pole opisu jest wymagane'],
     minLength: [3, 'Minimalna liczba znaków opisu to 3'],
+    trim: true
   },
   done: {
     type: Number,

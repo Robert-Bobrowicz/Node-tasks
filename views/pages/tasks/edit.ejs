@@ -1,22 +1,3 @@
 <h1>Edytuj zadanie</h1>
 
-<form method="POST">
-    <div class="mb-3">
-        <label for="task" class="form-label">Nazwa zadania</label>
-        <input type="text" id="task" class="form-control <%- errors?.title ? 'is-invalid' : '' %>" name="title"
-            value="<%- form.title %>">
-        <% if (errors?.title) { %>
-            <div class="invalid-feedback"><%- errors.title.message %></div>
-            <% } %>
-    </div>
-    <div class="mb-3">
-        <label for="desc" class="form-label">Opis zadania</label>
-        <textarea name="description" id="desc" rows="3"
-            class="form-control <%- errors?.description ? 'is-invalid' : '' %>"
-            value="<%- form.description %>"></textarea>
-        <% if (errors?.description) { %>
-            <div class="invalid-feedback"><%- errors.description.message %></div>
-            <% } %>
-    </div>
-    <button class="btn btn-primary">Edytuj</button>
-</form>
+<%- include('partials/form', { textButton: 'Edytuj' }) %>

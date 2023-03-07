@@ -4,9 +4,13 @@ const Task = require('../db/models/task');
 class TaskController {
 
   async showTasks(req, res) {
-    // pobierz wszystkie taski i wyświetl na widoku
-    const tasks = await Task.find({});
-    res.render('pages/tasks/index', { tasks });
+    try {
+      // pobierz wszystkie taski i wyświetl na widoku
+      const tasks = await Task.find({});
+      res.render('pages/tasks/index', { tasks });
+    } catch (err) {
+      console.log(chalk.blackBright('Coś poszło nie tak. Błąd odczytu z DB.', err));
+    }
   }
 
   showCreateForm(req, res) {

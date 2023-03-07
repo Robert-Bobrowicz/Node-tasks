@@ -9,7 +9,8 @@ class TaskController {
       const tasks = await Task.find({});
       res.render('pages/tasks/index', { tasks });
     } catch (err) {
-      console.log(chalk.blackBright('Coś poszło nie tak. Błąd odczytu z DB.', err));
+      console.log(chalk.blueBright('Coś poszło nie tak. Błąd odczytu z DB.', err));
+      res.send("#500  Upsss... coś poszło nie tak.");
     }
   }
 

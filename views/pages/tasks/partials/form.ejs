@@ -10,8 +10,7 @@
     <div class="mb-3">
         <label for="desc" class="form-label">Opis zadania</label>
         <textarea name="description" id="desc" cols="30" rows="3"
-            class="form-control <%- errors?.description ? 'is-invalid' : '' %>"
-            value="<%- form.description %>"></textarea>
+            class="form-control <%- errors?.description ? 'is-invalid' : '' %>"><%- form.description %></textarea>
         <% if (errors?.description) { %>
             <div class="invalid-feedback"><%- errors.description.message %></div>
             <% } %>
